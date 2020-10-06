@@ -378,7 +378,7 @@
 
     <!-- Checks that every class, enumeration and interface have a header comment. -->
     <module name="JavadocType">
-      <property name="allowMissingParamCategories" value="true"/>
+      <property name="allowMissingParamTags" value="true"/>
     </module>
 
     <!-- Checks that every public method (excluding getters, setters and constructors) has a header comment. -->
@@ -386,8 +386,8 @@
       <property name="allowedAnnotations" value="Override, Test, BeforeAll, BeforeEach, AfterAll, AfterEach, Subscribe"/>
       <property name="scope" value="public"/>
       <property name="validateThrows" value="false"/>
-      <property name="allowMissingParamCategories" value="true"/>
-      <property name="allowMissingReturnCategory" value="true"/>
+      <property name="allowMissingParamTags" value="true"/>
+      <property name="allowMissingReturnTag" value="true"/>
       <property name="tokens" value="METHOD_DEF, ANNOTATION_FIELD_DEF"/>
     </module>
 
