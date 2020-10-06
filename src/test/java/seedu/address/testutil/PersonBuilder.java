@@ -7,7 +7,7 @@ import seedu.address.model.person.Address;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
-import seedu.address.model.person.Isbn;
+import seedu.address.model.person.Phone;
 import seedu.address.model.person.Remark;
 import seedu.address.model.tag.Tag;
 import seedu.address.model.util.SampleDataUtil;
@@ -18,13 +18,13 @@ import seedu.address.model.util.SampleDataUtil;
 public class PersonBuilder {
 
     public static final String DEFAULT_NAME = "Alice Pauline";
-    public static final String DEFAULT_Isbn = "85355255";
+    public static final String DEFAULT_PHONE = "85355255";
     public static final String DEFAULT_EMAIL = "alice@gmail.com";
     public static final String DEFAULT_ADDRESS = "123, Jurong West Ave 6, #08-111";
     public static final String DEFAULT_REMARK = "She likes aardvarks.";
 
     private Name name;
-    private Isbn Isbn;
+    private Phone phone;
     private Email email;
     private Address address;
     private Remark remark;
@@ -35,7 +35,7 @@ public class PersonBuilder {
      */
     public PersonBuilder() {
         name = new Name(DEFAULT_NAME);
-        Isbn = new Isbn(DEFAULT_Isbn);
+        phone = new Phone(DEFAULT_PHONE);
         email = new Email(DEFAULT_EMAIL);
         address = new Address(DEFAULT_ADDRESS);
         remark = new Remark(DEFAULT_REMARK);
@@ -47,7 +47,7 @@ public class PersonBuilder {
      */
     public PersonBuilder(Person personToCopy) {
         name = personToCopy.getName();
-        Isbn = personToCopy.getIsbn();
+        phone = personToCopy.getPhone();
         email = personToCopy.getEmail();
         address = personToCopy.getAddress();
         remark = personToCopy.getRemark();
@@ -79,10 +79,10 @@ public class PersonBuilder {
     }
 
     /**
-     * Sets the {@code Isbn} of the {@code Person} that we are building.
+     * Sets the {@code Phone} of the {@code Person} that we are building.
      */
-    public PersonBuilder withIsbn(String Isbn) {
-        this.Isbn = new Isbn(Isbn);
+    public PersonBuilder withPhone(String phone) {
+        this.phone = new Phone(phone);
         return this;
     }
 
@@ -103,7 +103,7 @@ public class PersonBuilder {
     }
 
     public Person build() {
-        return new Person(name, Isbn, email, address, remark, tags);
+        return new Person(name, phone, email, address, remark, tags);
     }
 
 }

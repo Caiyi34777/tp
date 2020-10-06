@@ -2,49 +2,49 @@
   "_comment": "AddressBook save file which contains the same Person values as in TypicalPersons#getTypicalAddressBook()",
   "persons" : [ {
     "name" : "Alice Pauline",
-    "Isbn" : "94351253",
+    "phone" : "94351253",
     "email" : "alice@example.com",
     "address" : "123, Jurong West Ave 6, #08-111",
     "remark" : "",
     "tagged" : [ "friends" ]
   }, {
     "name" : "Benson Meier",
-    "Isbn" : "98765432",
+    "phone" : "98765432",
     "email" : "johnd@example.com",
     "address" : "311, Clementi Ave 2, #02-25",
     "remark" : "",
     "tagged" : [ "owesMoney", "friends" ]
   }, {
     "name" : "Carl Kurz",
-    "Isbn" : "95352563",
+    "phone" : "95352563",
     "email" : "heinz@example.com",
     "address" : "wall street",
     "remark" : "",
     "tagged" : [ ]
   }, {
     "name" : "Daniel Meier",
-    "Isbn" : "87652533",
+    "phone" : "87652533",
     "email" : "cornelia@example.com",
     "address" : "10th street",
     "remark" : "",
     "tagged" : [ "friends" ]
   }, {
     "name" : "Elle Meyer",
-    "Isbn" : "9482224",
+    "phone" : "9482224",
     "email" : "werner@example.com",
     "address" : "michegan ave",
     "remark" : "",
     "tagged" : [ ]
   }, {
     "name" : "Fiona Kunz",
-    "Isbn" : "9482427",
+    "phone" : "9482427",
     "email" : "lydia@example.com",
     "address" : "little tokyo",
     "remark" : "",
     "tagged" : [ ]
   }, {
     "name" : "George Best",
-    "Isbn" : "9482442",
+    "phone" : "9482442",
     "email" : "anna@example.com",
     "address" : "4th street",
     "remark" : "",
