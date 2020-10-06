@@ -10,8 +10,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import seedu.address.commons.exceptions.IllegalValueException;
+import seedu.address.model.category.Category;
 import seedu.address.model.person.*;
-import seedu.address.model.tag.Tag;
 
 /**
  * Jackson-friendly version of {@link Person}.
@@ -25,7 +25,7 @@ class JsonAdaptedPerson {
     private final String email;
     private final String address;
     private final String remark;
-    private final List<JsonAdaptedTag> tagged = new ArrayList<>();
+    private final List<JsonAdaptedCategory> categorised = new ArrayList<>();
 
     /**
      * Constructs a {@code JsonAdaptedPerson} with the given person details.
@@ -33,14 +33,14 @@ class JsonAdaptedPerson {
     @JsonCreator
     public JsonAdaptedPerson(@JsonProperty("name") String name, @JsonProperty("isbn") String isbn,
             @JsonProperty("email") String email, @JsonProperty("address") String address,
-            @JsonProperty("remark") String remark, @JsonProperty("tagged") List<JsonAdaptedTag> tagged) {
+            @JsonProperty("remark") String remark, @JsonProperty("categorised") List<JsonAdaptedCategory> categorised) {
         this.name = name;
         this.isbn = isbn;
         this.email = email;
         this.address = address;
         this.remark = remark;
-        if (tagged != null) {
-            this.tagged.addAll(tagged);
+        if (categorised != null) {
+            this.categorised.addAll(categorised);
         }
     }
 
@@ -53,8 +53,8 @@ class JsonAdaptedPerson {
         email = source.getEmail().value;
         address = source.getAddress().value;
         remark = source.getRemark().value;
-        tagged.addAll(source.getTags().stream()
-                .map(JsonAdaptedTag::new)
+        categorised.addAll(source.getCategories().stream()
+                .map(JsonAdaptedCategory::new)
                 .collect(Collectors.toList()));
     }
 
@@ -64,9 +64,9 @@ class JsonAdaptedPerson {
      * @throws IllegalValueException if there were any data constraints violated in the adapted person.
      */
     public Person toModelType() throws IllegalValueException {
-        final List<Tag> personTags = new ArrayList<>();
-        for (JsonAdaptedTag tag : tagged) {
-            personTags.add(tag.toModelType());
+        final List<Category> personCategories = new ArrayList<>();
+        for (JsonAdaptedCategory category : categorised) {
+            personCategories.add(category.toModelType());
         }
 
         if (name == null) {
@@ -106,8 +106,8 @@ class JsonAdaptedPerson {
         }
         final Remark modelRemark = new Remark(remark);
 
-        final Set<Tag> modelTags = new HashSet<>(personTags);
-        return new Person(modelName, modelIsbn, modelEmail, modelAddress, modelRemark, modelTags);
+        final Set<Category> modelCategories = new HashSet<>(personCategories);
+        return new Person(modelName, modelIsbn, modelEmail, modelAddress, modelRemark, modelCategories);
     }
 
 }

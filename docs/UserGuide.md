@@ -92,9 +92,9 @@ Format: `edit INDEX /BOOK_NAME /NAME /AUTHOR /PUBLISHER /ISBN /CATEGORY /LOCATIO
 * Edits the book at the specified `INDEX`. The index refers to the index number shown in the displayed book list. The index **must be a positive integer** 1, 2, 3, …
 * At least one of the optional fields must be provided.
 * Existing values will be updated to the input values.
-* When editing tags, the existing tags of the book will be removed i.e adding of tags is not cumulative.
-* You can remove all the book’s tags by typing `t/` without
-    specifying any tags after it.
+* When editing categories, the existing categories of the book will be removed i.e adding of categories is not cumulative.
+* You can remove all the book’s categories by typing `t/` without
+    specifying any categories after it.
 
 Examples:
 *  edit /BOOK_NAME: Numerical linear algebra [electronic resource] : an introduction /author: Holger Wendland /publisher: Cambridge University Press /ISBN: 9781316544938 /cat: Math /loc: Central Library /storage: 5

@@ -24,8 +24,8 @@ Class Isbn
 Class UniquePersonList
 }
 
-Package Tag {
-Class Tag
+Package Category {
+Class Category
 }
 }
 
@@ -46,7 +46,7 @@ Person *--> Name
 Person *--> Isbn
 Person *--> Email
 Person *--> Address
-Person *--> "*" Tag
+Person *--> "*" Category
 
 Name -[hidden]right-> Isbn
 Isbn -[hidden]right-> Address
