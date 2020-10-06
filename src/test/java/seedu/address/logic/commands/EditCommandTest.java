@@ -4,9 +4,9 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.logic.commands.CommandTestUtil.DESC_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.DESC_BOB;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_BOB;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_CATEGORY_HUSBAND;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_ISBN_BOB;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_HUSBAND;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandFailure;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
 import static seedu.address.logic.commands.CommandTestUtil.showPersonAtIndex;
@@ -55,10 +55,10 @@ public class EditCommandTest {
 
         PersonBuilder personInList = new PersonBuilder(lastPerson);
         Person editedPerson = personInList.withName(VALID_NAME_BOB).withIsbn(VALID_ISBN_BOB)
-                .withTags(VALID_TAG_HUSBAND).build();
+                .withCategories(VALID_CATEGORY_HUSBAND).build();
 
         EditPersonDescriptor descriptor = new EditPersonDescriptorBuilder().withName(VALID_NAME_BOB)
-                .withIsbn(VALID_ISBN_BOB).withTags(VALID_TAG_HUSBAND).build();
+                .withIsbn(VALID_ISBN_BOB).withCategories(VALID_CATEGORY_HUSBAND).build();
         EditCommand editCommand = new EditCommand(indexLastPerson, descriptor);
 
         String expectedMessage = String.format(EditCommand.MESSAGE_EDIT_PERSON_SUCCESS, editedPerson);
