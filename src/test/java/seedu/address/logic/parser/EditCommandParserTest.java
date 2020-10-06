@@ -94,7 +94,7 @@ public class EditCommandParserTest {
         // is tested at {@code parse_invalidValueFollowedByValidValue_success()}
         assertParseFailure(parser, "1" + ISBN_DESC_BOB + INVALID_ISBN_DESC, Isbn.MESSAGE_CONSTRAINTS);
 
-        // while parsing {@code PREFIX_CATEGORY} alone will reset the categorys of the {@code Person} being edited,
+        // while parsing {@code PREFIX_CATEGORY} alone will reset the categories of the {@code Person} being edited,
         // parsing it together with a valid category results in error
         assertParseFailure(parser, "1" + CATEGORY_DESC_FRIEND + CATEGORY_DESC_HUSBAND + CATEGORY_EMPTY, Category.MESSAGE_CONSTRAINTS);
         assertParseFailure(parser, "1" + CATEGORY_DESC_FRIEND + CATEGORY_EMPTY + CATEGORY_DESC_HUSBAND, Category.MESSAGE_CONSTRAINTS);
@@ -158,7 +158,7 @@ public class EditCommandParserTest {
         expectedCommand = new EditCommand(targetIndex, descriptor);
         assertParseSuccess(parser, userInput, expectedCommand);
 
-        // categorys
+        // categories
         userInput = targetIndex.getOneBased() + CATEGORY_DESC_FRIEND;
         descriptor = new EditPersonDescriptorBuilder().withCategories(VALID_CATEGORY_FRIEND).build();
         expectedCommand = new EditCommand(targetIndex, descriptor);
