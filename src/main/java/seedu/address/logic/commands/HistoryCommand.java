@@ -10,9 +10,18 @@ import seedu.address.model.Model;
 import seedu.address.model.book.Book;
 import seedu.address.ui.Mode;
 
+/**
+ *  Displays all times borrowed.
+ */
 public class HistoryCommand extends Command {
     public static final String COMMAND_WORD = "history";
 
+    /**
+     *
+     *
+     * @param model {@code Model} which the command should operate on.
+     * @return
+     */
     @Override
     public CommandResult execute(Model model) {
         requireNonNull(model);
@@ -30,6 +39,12 @@ public class HistoryCommand extends Command {
                 history));
     }
 
+    /**
+     * Checks whether the other object is equal to this one.
+     *
+     * @param other another object
+     * @return boolean value
+     */
     @Override
     public boolean equals(Object other) {
         return this == other
