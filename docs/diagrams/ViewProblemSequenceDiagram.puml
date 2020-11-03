@@ -31,7 +31,7 @@ deactivate LibraryParser
 LogicManager -> ViewCommand : execute()
 activate ViewCommand
 
-ViewCommand -> Model : updateFilteredProblemList()
+ViewCommand -> Model : updateFilteredProblemList(PREDICATE_SHOW_ALL_PROBLEMS, Mode.NORMAL)
 activate Model
 
 Model --> ViewCommand

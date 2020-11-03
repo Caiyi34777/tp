@@ -9,5 +9,77 @@ IntelliBrary is a desktop library management application used for library admini
 
 Given below are my contributions to the project.
 
-* **New Feature**: Added the ability to Purge sample data and Check borrowed status
+* **Code Contributed**:
 
+See the link [RepoSense link](https://nus-cs2103-ay2021s1.github.io/tp-dashboard/#breakdown=true&search=davidsqf&sort=groupTitle&sortWithin=title&since=2020-08-14&timeframe=commit&mergegroup=&groupSelect=groupByRepos&checkedFileTypes=docs~functional-code~test-code~other)
+
+* **Enhancements Implemented**: 
+
+    * Create Model: Problem:
+
+        * I proposed to create the `Problem` series of features.
+
+        * I created the `Problem` series model, which is parallel to the existing `book`
+series model. I wrote 4 models, i.e. `Problem.java`, `Severity.java`, `Description.java`, and `ProblemList.java`,
+together they form the main structure of `Problem` model.
+
+    * Add Feature: ReportProblem:
+
+        * I wrote `AddProblemCommand.java`, `AddProblemCommandParser.java` and 
+made modification to other existing relevant files.
+
+    * Add Feature: ViewProblem:
+
+        * I wrote `ViewProblemCommand.java` and made modification to other
+existing relevant files.
+
+    * Add Attribute: Publisher:
+
+        * I wrote the model for `Publisher`, i.e. `Publisher.java`.
+
+        * I made modifications to a dozen of other existing files.
+
+        * I added test code for the newly added `Publisher` attribute. 
+
+* **Contributions to Documentation**:
+
+    * User Guide:
+        I wrote the sections of `ReportProblem` and `ViewProblem` features.
+    * Developer Guide:
+        * I drew the sequence diagrams for `ReportProblem` and `ViewProblem`.
+        * I wrote the section of `ReportProblem`. I explicitly showed the processing steps and explained why it was implemented
+        this way (e.g. have the attribute `severity`) and proposed an alternative (i.e. 
+        link problems to books).
+        * I wrote the section of `ViewProblem`. I explicitly showed the processing steps.
+
+* **Contributions to Team-Based Tasks**:
+    * I set up the Github team organisation and the repository.
+    * I proposed the idea of our project, i.e. an app for librarians.
+    * I proposed the name of our app, i.e. `IntelliBrary`.
+    * I wrapped up 2 milestones and released v1.3.
+    * I contributed in documenting the target user profile and user stories.
+    * I classified the problems reported from PE dry run into different types so that we could easily attribute each problem to a developer.
+    * I was responsive and constructive during team meetings and helped to boost the efficiency of weekly meetings.
+    
+* **Review Contributions**:
+    I have reviewed the following PRs: 
+    [PR1](https://github.com/AY2021S1-CS2103-F09-3/tp/pull/33)
+    [PR2](https://github.com/AY2021S1-CS2103-F09-3/tp/pull/31)
+    [PR3](https://github.com/AY2021S1-CS2103-F09-3/tp/pull/30)
+    [PR4](https://github.com/AY2021S1-CS2103-F09-3/tp/pull/28)
+    [PR5](https://github.com/AY2021S1-CS2103-F09-3/tp/pull/27)
+    [PR6](https://github.com/AY2021S1-CS2103-F09-3/tp/pull/26)
+    [PR7](https://github.com/AY2021S1-CS2103-F09-3/tp/pull/25)
+        
+
+* **Project management**:
+  * Managed releases
+
+* **Enhancements to existing features**:
+  * Coming soon
+
+* **Documentation**:
+  * User Guide:
+    * Added documentation for the features
+  * Developer Guide:
+    * Added implementation details.
