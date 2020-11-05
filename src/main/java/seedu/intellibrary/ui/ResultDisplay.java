@@ -41,6 +41,8 @@ public class ResultDisplay extends UiPart<Region> {
      *
      * @return feedback string
      */
+    //@@author Caiyi34777-reused
+    //Reused from https://github.com/AY2021S1-CS2103-F09-3/tp to implement auto-suggestion
     public static String getAutoCompleteResult(String input, List<String> commandSuggestionList) {
         String feedback = "";
         String[] inputArr = input.split(" ");
@@ -59,6 +61,7 @@ public class ResultDisplay extends UiPart<Region> {
 
         return feedback.trim();
     }
+    //@@author
 
     /**
      * Shows autocomplete result to user.
@@ -67,6 +70,8 @@ public class ResultDisplay extends UiPart<Region> {
      * @param input input of the user
      *
      */
+    //@@author Caiyi34777-reused
+    //Reused from https://github.com/AY2021S1-CS2103-F09-3/tp to implement auto-suggestion
     public void showAutoCompleteResult(String input) {
         requireNonNull(input);
 
@@ -76,5 +81,6 @@ public class ResultDisplay extends UiPart<Region> {
 
         resultDisplay.setText(getAutoCompleteResult(input, suggestions));
     }
+    //@@author
 
 }

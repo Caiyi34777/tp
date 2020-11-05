@@ -46,6 +46,8 @@ public class CommandBox extends UiPart<Region> {
         }
     }
 
+    //@@author Caiyi34777-reused
+    //Reused from https://github.com/AY2021S1-CS2103-F09-3/tp to implement auto-suggestion
     /**
      * Set autocomplete listener.
      *
@@ -57,6 +59,7 @@ public class CommandBox extends UiPart<Region> {
         commandTextField.textProperty().addListener((unused1, unused2, input) ->
                 resultDisplay.showAutoCompleteResult(input));
     }
+    //@@author
 
     /**
      * Sets the command box style to use the default style.
