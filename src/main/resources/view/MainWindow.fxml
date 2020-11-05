@@ -11,8 +11,11 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Font?>
 <fx:root type="javafx.stage.Stage" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-         title="IntelliBrary" minWidth="600" minHeight="450" onCloseRequest="#handleExit">
+         title="IntelliBrary" minWidth="1140" minHeight="400" onCloseRequest="#handleExit">
   <icons>
     <Image url="@/images/library_32.png" />
   </icons>
@@ -46,12 +49,39 @@
           </padding>
         </StackPane>
 
-        <VBox fx:id="bookList" styleClass="pane-with-border" minWidth="340" prefWidth="340" VBox.vgrow="ALWAYS">
-          <padding>
-            <Insets top="5" right="10" bottom="5" left="10" />
-          </padding>
-          <StackPane fx:id="bookListPanelPlaceholder" VBox.vgrow="ALWAYS"/>
-        </VBox>
+        <HBox styleClass="pane-with-border" HBox.hgrow="ALWAYS">
+          <VBox alignment="TOP_CENTER">
+          <Label>
+            <font>
+              <Font name="System Bold" size="14.0" />
+            </font>
+            Books
+          </Label>
+
+            <VBox fx:id="bookList" styleClass="pane-with-border" minWidth="600" prefWidth="500" VBox.vgrow="ALWAYS">
+              <padding>
+                <Insets top="5" right="10" bottom="5" left="10" />
+              </padding>
+              <StackPane fx:id="bookListPanelPlaceholder" VBox.vgrow="ALWAYS"/>
+            </VBox>
+          </VBox>
+
+          <!-- problem report list -->
+          <VBox alignment="TOP_CENTER">
+          <Label>
+            <font>
+              <Font name="System Bold" size="14.0" />
+            </font>
+            Problem Report
+          </Label>
+            <VBox fx:id="problemReportList" styleClass="pane-with-border" minWidth="500" prefWidth="500" VBox.vgrow="ALWAYS">
+              <padding>
+                <Insets top="5" right="10" bottom="5" left="10" />
+              </padding>
+              <StackPane fx:id="problemReportListPanelPlaceholder" VBox.vgrow="ALWAYS"/>
+            </VBox>
+          </VBox>
+        </HBox>
 
         <StackPane fx:id="statusbarPlaceholder" VBox.vgrow="NEVER" />
       </VBox>
