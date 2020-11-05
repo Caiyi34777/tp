@@ -63,6 +63,8 @@ public class DeleteReviewCommand extends Command {
 
     @Override
     public CommandResult execute(Model model) throws CommandException {
+        assert bookIndex != null;
+        assert reviewIndex >= 1;
         try {
             requireNonNull(model);
             List<Book> lastShownList = model.getFilteredBookList();
@@ -102,6 +104,8 @@ public class DeleteReviewCommand extends Command {
      * @return The book with the new review list.
      */
     private static Book createdChangedBook(Book book, int reviewIndex) {
+        assert book != null;
+        assert reviewIndex >= 1;
         Name name = book.getName();
         Isbn isbn = book.getIsbn();
         Email email = book.getEmail();
@@ -116,5 +120,18 @@ public class DeleteReviewCommand extends Command {
         Stocking stocking = book.getStocking();
 
         return new Book(name, isbn, email, address, times, categories, stocking, reviewList, author, publisher);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        } else if (!(o instanceof DeleteReviewCommand)) {
+            return false;
+        } else {
+            DeleteReviewCommand other = (DeleteReviewCommand) o;
+            return reviewIndex == other.reviewIndex
+                    && bookIndex.equals(((DeleteReviewCommand) o).bookIndex);
+        }
     }
 }

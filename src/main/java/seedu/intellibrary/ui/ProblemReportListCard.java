@@ -37,8 +37,8 @@ public class ProblemReportListCard extends UiPart<Region> {
         super(FXML);
         this.problem = problem;
         id.setText(displayedIndex + ". ");
-        severity.setText(problem.getSeverity().severity);
-        description.setText(problem.getDescription().description);
+        severity.setText("SEVERITY: " + problem.getSeverity().severity);
+        description.setText("DESCRIPTION: " + problem.getDescription().description);
     }
 
     @Override

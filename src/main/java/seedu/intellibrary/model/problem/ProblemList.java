@@ -8,8 +8,14 @@ import java.util.List;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+<<<<<<< HEAD:src/main/java/seedu/intellibrary/model/problem/ProblemList.java
 import seedu.intellibrary.model.book.exceptions.BookNotFoundException;
 import seedu.intellibrary.model.book.exceptions.DuplicateBookException;
+=======
+import seedu.address.model.book.exceptions.BookNotFoundException;
+import seedu.address.model.book.exceptions.DuplicateBookException;
+import seedu.address.model.problem.exceptions.DuplicateProblemException;
+>>>>>>> 9c21e3c244132f3455a882c26f163f7013255bf9:src/main/java/seedu/address/model/problem/ProblemList.java
 
 
 public class ProblemList implements Iterable<Problem> {
@@ -50,6 +56,9 @@ public class ProblemList implements Iterable<Problem> {
      */
     public void add(Problem toAdd) {
         requireNonNull(toAdd);
+        if (contains(toAdd)) {
+            throw new DuplicateProblemException();
+        }
         list.add(toAdd);
     }
 
@@ -85,6 +94,11 @@ public class ProblemList implements Iterable<Problem> {
     @Override
     public Iterator<Problem> iterator() {
         return list.iterator();
+    }
+
+    @Override
+    public int hashCode() {
+        return list.hashCode();
     }
 
     @Override

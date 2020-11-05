@@ -4,7 +4,9 @@ import static java.util.Objects.requireNonNull;
 
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.logging.Logger;
 
+<<<<<<< HEAD:src/main/java/seedu/intellibrary/logic/commands/SearchReviewCommand.java
 import seedu.intellibrary.commons.core.Messages;
 import seedu.intellibrary.logic.commands.exceptions.CommandException;
 import seedu.intellibrary.logic.parser.CliSyntax;
@@ -14,6 +16,17 @@ import seedu.intellibrary.model.book.NameMatchesKeywordPredicate;
 import seedu.intellibrary.model.book.NumberContainsKeywordPredicate;
 import seedu.intellibrary.model.review.Review;
 import seedu.intellibrary.ui.Mode;
+=======
+import seedu.address.commons.core.LogsCenter;
+import seedu.address.commons.core.Messages;
+import seedu.address.logic.commands.exceptions.CommandException;
+import seedu.address.logic.parser.CliSyntax;
+import seedu.address.model.Model;
+import seedu.address.model.book.Book;
+import seedu.address.model.book.NameMatchesKeywordPredicate;
+import seedu.address.model.book.NumberContainsKeywordPredicate;
+import seedu.address.ui.Mode;
+>>>>>>> 9c21e3c244132f3455a882c26f163f7013255bf9:src/main/java/seedu/address/logic/commands/SearchReviewCommand.java
 
 /**
  * Searches for the review of the corresponding book.
@@ -30,9 +43,8 @@ public class SearchReviewCommand extends Command {
             + "[" + CliSyntax.PREFIX_ISBN + "ISBN]\n"
             + "Example: " + COMMAND_WORD + " " + CliSyntax.PREFIX_NAME + "a brief history of time";
 
+    private final Logger logger = LogsCenter.getLogger(getClass());
     private Predicate<Book> predicate;
-
-    private Review review;
 
     /**
      * Creates a StockCommand to search for the stocking information in each location.
@@ -63,6 +75,7 @@ public class SearchReviewCommand extends Command {
 
         model.updateFilteredBookList((book -> false), Mode.NORMAL);
         model.updateFilteredBookList(predicate, Mode.REVIEW);
+        logger.info("Show the stocking information in the review book card");
         return new CommandResult(String.format(Messages.MESSAGE_BOOKS_LISTED_OVERVIEW,
                 model.getFilteredBookList().size()));
     }

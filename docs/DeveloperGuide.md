@@ -424,16 +424,20 @@ _{Explain here how the data archiving feature will be implemented}_
 
 ### Product scope
 **Target user profile**:
-* library administrators
+* library administrator, librarian
 * has a need to manage a large number of books stored in different libraries and locations
 * has a need to purchase books according to the current stock and borrow frequency
 * has a need to keep track of the borrow history of books 
+* has a need to collect and record the rating and review of a book from the readers anonymously
 * prefer desktop apps over other types
 * can type fast
 * prefers typing to mouse interactions
 * is reasonably comfortable using CLI apps
 
 **Value proposition**:
+* help to put books along with its related information, such as author, description, publisher, and library specific information, such as stocking location, into appropriate categories. This not only makes the searching of the book itself easier but also provides convenience for managers to track the storage and borrow history.
+* help admin staff keep track of the popularity of different books, and help them predict the usage of different books to plan for book purchase
+* help admin staff to keep track of books from different libraries and locate books from different libraries easily
 
 ### User stories
 
@@ -441,20 +445,18 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 | Priority | As a …​                                    | I want to …​                     | So that I can…​                                                        |
 | -------- | ------------------------------------------ | -------------------------------- | ---------------------------------------------------------------------- |
-| `* * *`  | library administrator                      | check the location(e.g. central library, Hon Sui Sen Memorial Library) of each book   |provide accurate information to borrowers                                                                                 |
-| `* * *`  | library administrator                      | view the stockings of different books                                                 |efficiently increase the stockings of those very popular books to meet the demand of the readers                          |
-| `* *`    | library administrator                      | get an auto-generated list of most popular books                                      |know what books to purchase in the future                                                                                 |
-| `* *`    | library administrator                      | view book reviews made by other readers                                               |choose the interesting books based on reader feedback and reorder them so that they can be easily reached by other readers|
+| `* * *`  | library administrator                      | check the stocking of books in every location(e.g. central library, Hon Sui Sen Memorial Library) of each book   |efficiently increase the stockings of those very popular books to meet the demand of the readers   |
+| `* *`    | library administrator                      | get an auto-generated list of most popular books in each categories                                     |know what books to purchase in the future                                                                                 |
+| `* *`    | library administrator                      | view the book rating and reviews collected from the readers                    |estimate the popularity of the book among the readers and decide whether to bring in more copys of the book accroding to the reader need|
+| `* *`    | library administrator                      | add, delete, and edit book rating and reviews collected from the readers                    |keep the review record for future evaluation of the book quality and popularity among the readers|
 | `* *`    | library administrator                      | edit the information of a book                                                        |keep the book information in the database up to date                                                                      |
-| `* *`    | library administrator                      | add book reviews provided by readers                                                  |share my reading experience with other readers and help them during book selection                                        |
-| `* *`    | library administrator                      | make users grouped into different categories based on their reading appetite          |have a better understanding of the type of each of the user                                                               |
-| `* *`    | library administrator                      | see the books that are most frequently read by each category of users                 |know what books should be purchased for each category of users                                                            |
-| `* *`    | library administrator                      | keep track of the group of books where a large number of users read all of them       |transfer the books read by the same category of users to the same location to make it convenient for the user             |
-| `* *`    | expert user                                | add friendlier syntax                                                                 |boost efficiency                                                                                                          |
-| `* *`    | expert user                                | delete and add multiple book information within one command                           |it is more time efficient                                                                                                 |
-| `* * *`  | first time user                            | view the list of smaple data   | get a rough idea of how the project will look like                     |
-| `* * *`  | library administrator                      | purge all sample data in one go       |start using the app without further ado             |
-| `* * *`  | library administrator                      | check the borrowing status of a certain book       |tell students whether they can borrow this book or not             |
+| `* * *`  | library administrator                      | report problems found in libraries along with their severities                                                |keep track of all the problems and prioritize them by their severity levels                          |
+| `* * *`  | library administrator                      | view all the reported problems                                                 |know what problems need to be solved  |
+| `* *`    | expert user                                | delete multiple books by condition within one command                           |it is more time efficient            |
+| `* * *`  | first time user                            | view the list of sample data   | get a rough idea of how the project will look like                     |
+| `* * *`  | first time user                            | see smart suggestions for the command line formats   | quickly get used to the command line formats                     |
+| `* * *`  | library administrator                      | check the borrowing status of a certain book       |tell students whether they can borrow this book or not            |
+| `*`  | library administrator                      | clear all data within one command       |efficiently reset the app            |
 *{More to be added}*
 
 ### Use cases
@@ -472,7 +474,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * 1a. Some or all sample data had already been deleted before the 'purge' request 
     
-    * 1a1. The application deletes all remaining sample data.
+    * 1a1. IntelliBrary deletes all remaining sample data.
     
       Use case ends.
 
@@ -481,7 +483,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **MSS**
   1. User request to add a new book into the library.
 
-  2. The application adds the book to the library and shows a successfull message to the user.
+  2. IntelliBrary adds the book to the library and shows a successfull message to the user.
   
      Use case ends.
   
@@ -489,19 +491,19 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * 1a. The book to be added is already found in the library.
     
-    * 1a1. The application shows an error message that the book is already stored in the library.
+    * 1a1. IntelliBrary shows an error message that the book is already stored in the library.
     
       Use case ends.
 
 * 1b. Some information about the book is not entered in the command.
 
-    * 1b1. The application shows an error message that the information about the book is incomplete.
+    * 1b1. IntelliBrary shows an error message that the information about the book is incomplete.
 
       Use case ends.
       
 * 1c. The data type of some of the book information is incorrect.
     
-    * 1c1. The application shows an error message that data type of some of the book information is incorrect.
+    * 1c1. IntelliBrary shows an error message that data type of some of the book information is incorrect.
     
       Use case ends.
       
@@ -510,7 +512,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **MSS**
   1. User request to delete a book from the library.
 
-  2. The application deletes the book from the library and shows a successfull message to the user.
+  2. IntelliBrary deletes the book from the library and shows a successfull message to the user.
   
      Use case ends.
   
@@ -518,39 +520,17 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * 1a. The book to be deleted cannot be found in the library.
     
-    * 1a1. The application shows an error message that the book to be deleted cannot be found in the library.
+    * 1a1. IntelliBrary shows an error message that the book to be deleted cannot be found in the library.
     
       Use case ends.
-      
-**Use case: UC04 - Check the location**
-
-**MSS**
-
-1.  User request to check the location of a book using a command.
-2.  The application shows the relevant information of the book, including the storage location.
-
-    Use case ends.
-
-**Extensions**
-
-* 1a. The book name or ISBN given by the user is not found in the record.
-    
-    * 1a1. The application shows an error message that the book is not found.
-    
-      Use case ends.
-
-* 1b. The location of the book is not recorded or the list is empty.
-
-    * 1b1. The application shows an error message that the location of the book is not recorded.
-
-      Use case ends.
-      
-**Use case: UC05 - view the stockings of different books**
+            
+**Use case: UC04 - view the stockings of different books**
 
 **MSS**
 
 1.  User request to check the stocking of a book using a command.
-2.  The application shows the relevant information of the book, including the stocking of the book.
+
+2.  IntelliBrary shows the relevant information of the book, including the stocking of the book.
 
     Use case ends.
 
@@ -558,17 +538,125 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * 1a. The book name or ISBN given by the user is not found in the record.
     
-    * 1a1. The application shows an error message that the book is not found.
+    * 1a1. IntelliBrary shows an error message that the book is not found and 0 book is listed.
     
       Use case ends.
 
 * 1b. The stocking of the book is not recorded.
 
-    * 1b1. The application shows an error message that the stocking of the book is not recorded.
+    * 1b1. IntelliBrary shows that the stocking information of the book in some locations is not available.
+
+      Use case ends.
+      
+**Use case: UC05 - search for the review of a book**
+
+**MSS**
+
+1.  User requests to search for the review of a certain book.
+
+2.  IntelliBrary shows the review list of the book.
+
+    Use case ends.
+
+**Extensions**
+
+* 1a. The book specified by the user is not found in the available books record.
+
+    * 1a1. IntelliBrary shows an empty book list.
 
       Use case ends.
 
-**Use case UC06 - View Sample Data**
+* 1b. The search key given by the user has an invalid format.
+
+    * 1b1. IntelliBrary shows an error message that the entered command format is not correct and shows the examples of the correct usage of the command. 
+
+      Use case ends.
+      
+**Use case: UC06 - add the review for a book**
+
+**MSS**
+
+1.  User requests to add a review record of a certain book.
+
+2.  IntelliBrary adds the review to the review list of the book, and shows the new review list.
+
+    Use case ends.
+
+**Extensions**
+
+* 1a. The book specified by the user is not found in the current shown book list.
+
+    * 1a1. IntelliBrary shows an error message that the book specified is not valid.
+
+      Use case ends.
+
+* 1b. The review given by the user has an invalid format, with the rating or review content missing or having incorrect format or value.
+
+    * 1b1. IntelliBrary shows an error message that the review given by the user is invalid and gives the suggestion on valid review. 
+
+      Use case ends.
+
+**Use case: UC07 - delete the review for a book**
+
+**MSS**
+
+1.  User requests to delete a review record of a certain book.
+
+2.  IntelliBrary deletes the review to the review list of the book, and shows the updated review list.
+
+    Use case ends.
+
+**Extensions**
+
+* 1a. The book specified by the user is not found in the current shown book list.
+
+    * 1a1. IntelliBrary shows an error message that the book specified is not valid.
+
+      Use case ends.
+
+* 1b. The book review specified by the user is not found in the review list of the book.
+
+    * 1a1. IntelliBrary shows an error message that the review specified is not valid.
+
+      Use case ends.
+
+**Use case: UC08 - edit the review for a book**
+
+**MSS**
+
+1.  User requests to edit a review record of a certain book.
+
+2.  IntelliBrary edits the review to the review list of the book, and shows the updated review list.
+
+    Use case ends.
+
+**Extensions**
+
+* 1a. The book specified by the user is not found in the current shown book list.
+
+    * 1a1. IntelliBrary shows an error message that the book specified is not valid.
+
+      Use case ends.
+
+* 1b. The book review specified by the user is not found in the review list of the book.
+
+    * 1a1. IntelliBrary shows an error message that the review specified is not valid.
+
+      Use case ends.
+
+* 1c. The new review given by the user has an invalid format, with the rating or review content missing or having incorrect format or value.
+
+    * 1c1. IntelliBrary shows an error message that the review given by the user is invalid and gives the suggestion on valid review. 
+
+      Use case ends.
+
+* 1c. The new review given by the user is equivalent to the original review.
+
+    * 1c1. IntelliBrary shows an error message that the review given by the user does not make changes to the original review and the value of the edited review needs to be different. 
+
+      Use case ends.
+
+**Use case UC009 - View Sample Data**
 
 **MSS**
 
@@ -583,7 +671,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
   Use case ends.
   
-**Use case UC07 - Delete a book**
+**Use case UC10 - Delete a book**
 
 **MSS**
 
@@ -606,7 +694,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
       Use case resumes at step 2.
 
-**Use case: UC08 - Edit a book**
+**Use case: UC11 - Edit a book**
 
 **MSS**
   1. User requests to edit a book and inputs new information.
@@ -621,7 +709,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     
       Use case ends.
       
-**Use case: UC09 - Check the borrowing status of a book**
+**Use case: UC12 - Check the borrowing status of a book**
 
 **MSS**
   1. User requests to check the borrowing status of a book.
@@ -635,7 +723,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     
       Use case ends.  
       
-**Use case: UC10 - Get usage times of a book**
+**Use case: UC13 - Get usage times of a book**
 
 **MSS**
   1. User requests to get the usage times of a book and input index/book title/book isbn.
@@ -661,13 +749,43 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     
       Use case ends.   
       
-**Use case: UC11 - Get number of books borrowed**
+**Use case: UC14 - Get number of books borrowed**
 
 **MSS**
   1. User requests to get the number of books borrowed by the whole borrower cluster.
   2. IntelliBrary tells the user the number of books borrowed by the whole borrower cluster.
 
 Use case ends.  
+
+**Use case: UC15 - Report problem**
+
+**MSS**
+  1. User requests to report a problem.
+  2. IntelliBrary adds the problem and shows a successfull message to the user.
+
+  Use case ends. 
+  
+**Extensions**
+
+* 1a. Some information about the problem is not entered in the command.
+
+    * 1a1. IntelliBrary shows an error message that the information about the problem is incomplete.
+
+      Use case ends.
+      
+* 1b. The data type of some of the problem information is incorrect.
+    
+    * 1b1. IntelliBrary shows an error message that data type of some of the problem information is incorrect.
+    
+      Use case ends.
+      
+**Use case: UC16 - View problems**
+
+**MSS**
+  1. User requests to view problems.
+  2. IntelliBrary shows the problem list and shows a successfull message to the user.
+
+  Use case ends.
 
 *{More to be added}*
 

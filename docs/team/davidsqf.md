@@ -70,16 +70,3 @@ existing relevant files.
     [PR5](https://github.com/AY2021S1-CS2103-F09-3/tp/pull/27)
     [PR6](https://github.com/AY2021S1-CS2103-F09-3/tp/pull/26)
     [PR7](https://github.com/AY2021S1-CS2103-F09-3/tp/pull/25)
-        
-
-* **Project management**:
-  * Managed releases
-
-* **Enhancements to existing features**:
-  * Coming soon
-
-* **Documentation**:
-  * User Guide:
-    * Added documentation for the features
-  * Developer Guide:
-    * Added implementation details.

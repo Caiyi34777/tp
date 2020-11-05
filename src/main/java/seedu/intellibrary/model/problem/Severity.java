@@ -28,6 +28,18 @@ public class Severity {
     }
 
     @Override
+    public boolean equals(Object other) {
+        return other == this // short circuit if same object
+                || (other instanceof Severity // instanceof handles nulls
+                && severity.equals(((Severity) other).severity)); // state check
+    }
+
+    @Override
+    public int hashCode() {
+        return severity.hashCode();
+    }
+
+    @Override
     public String toString() {
         return severity;
     }

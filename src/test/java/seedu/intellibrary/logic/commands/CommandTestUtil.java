@@ -2,6 +2,7 @@ package seedu.intellibrary.logic.commands;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+<<<<<<< HEAD:src/test/java/seedu/intellibrary/logic/commands/CommandTestUtil.java
 import static seedu.intellibrary.logic.parser.CliSyntax.PREFIX_ADDRESS;
 import static seedu.intellibrary.logic.parser.CliSyntax.PREFIX_AUTHOR;
 import static seedu.intellibrary.logic.parser.CliSyntax.PREFIX_CATEGORY;
@@ -12,6 +13,20 @@ import static seedu.intellibrary.logic.parser.CliSyntax.PREFIX_PUBLISHER;
 import static seedu.intellibrary.logic.parser.CliSyntax.PREFIX_STOCKING;
 import static seedu.intellibrary.logic.parser.CliSyntax.PREFIX_TIMES;
 import static seedu.intellibrary.testutil.Assert.assertThrows;
+=======
+import static seedu.address.logic.parser.CliSyntax.PREFIX_ADDRESS;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_AUTHOR;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_CATEGORY;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_DESCRIPTION;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_ISBN;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_PUBLISHER;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_SEVERITY;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_STOCKING;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_TIMES;
+import static seedu.address.testutil.Assert.assertThrows;
+>>>>>>> 9c21e3c244132f3455a882c26f163f7013255bf9:src/test/java/seedu/address/logic/commands/CommandTestUtil.java
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -50,6 +65,10 @@ public class CommandTestUtil {
     public static final String VALID_PUBLISHER_BOB = "pub";
     public static final String VALID_AUTHOR_AMY = "a";
     public static final String VALID_PUBLISHER_AMY = "pub";
+    public static final String VALID_SEVERITY_P1 = "low";
+    public static final String VALID_SEVERITY_P2 = "high";
+    public static final String VALID_DESCRIPTION_P1 = "good morning";
+    public static final String VALID_DESCRIPTION_P2 = "bad morning";
 
     public static final String NAME_DESC_AMY = " " + PREFIX_NAME + VALID_NAME_AMY;
     public static final String NAME_DESC_BOB = " " + PREFIX_NAME + VALID_NAME_BOB;
@@ -69,6 +88,10 @@ public class CommandTestUtil {
     public static final String PUBLISHER_DESC_BOB = " " + PREFIX_PUBLISHER + VALID_PUBLISHER_BOB;
     public static final String AUTHOR_DESC_AMY = " " + PREFIX_AUTHOR + VALID_AUTHOR_AMY;
     public static final String PUBLISHER_DESC_AMY = " " + PREFIX_PUBLISHER + VALID_PUBLISHER_AMY;
+    public static final String SEVERITY_DESC_P1 = " " + PREFIX_SEVERITY + VALID_SEVERITY_P1;
+    public static final String SEVERITY_DESC_P2 = " " + PREFIX_SEVERITY + VALID_SEVERITY_P2;
+    public static final String DESCRIPTION_DESC_P1 = " " + PREFIX_DESCRIPTION + VALID_DESCRIPTION_P1;
+    public static final String DESCRIPTION_DESC_P2 = " " + PREFIX_DESCRIPTION + VALID_DESCRIPTION_P2;
 
     public static final String INVALID_NAME_DESC = " " + PREFIX_NAME + "James&"; // '&' not allowed in names
     public static final String INVALID_ISBN_DESC = " " + PREFIX_ISBN + "911a"; // 'a' not allowed in isbns

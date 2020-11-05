@@ -16,7 +16,6 @@ public class CliSyntax {
     public static final Prefix PREFIX_PUBLISHER = new Prefix("p/");
     public static final Prefix PREFIX_SEVERITY = new Prefix("severity/");
     public static final Prefix PREFIX_DESCRIPTION = new Prefix("problem/");
-    public static final Prefix PREFIX_VIEW_PROBLEMS = new Prefix("view/");
     public static final Prefix PREFIX_RATING = new Prefix("ra/");
     public static final Prefix PREFIX_REVIEW = new Prefix("re/");
     public static final Prefix PREFIX_REVIEWNUMBER = new Prefix("rn/");

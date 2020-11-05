@@ -1,5 +1,7 @@
 package seedu.intellibrary.model.problem;
 
+import java.util.Objects;
+
 public class Problem {
     private final Severity severity;
     private final Description description;
@@ -23,6 +25,7 @@ public class Problem {
             return true;
         }
 
+
         return otherProblem != null
                 && otherProblem.getDescription().equals(getDescription())
                 && (otherProblem.getSeverity().equals(getSeverity()));
@@ -34,6 +37,12 @@ public class Problem {
 
     public Description getDescription() {
         return description;
+    }
+
+    @Override
+    public int hashCode() {
+        // use this method for custom fields hashing instead of implementing your own
+        return Objects.hash(severity, description);
     }
 
     @Override

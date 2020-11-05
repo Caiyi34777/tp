@@ -11,6 +11,7 @@ public class Messages {
     public static final String MESSAGE_UNKNOWN_COMMAND = "Unknown command";
     public static final String MESSAGE_INVALID_COMMAND_FORMAT = "Invalid command format! \n%1$s";
     public static final String MESSAGE_INVALID_BOOK_DISPLAYED_INDEX = "The book index provided is invalid";
+    public static final String MESSAGE_INVALID_PROBLEM_DISPLAYED_INDEX = "The problem report index provided is invalid";
     public static final String MESSAGE_INVALID_REVIEW_DISPLAYED_INDEX = "The review index provided is invalid";
     public static final String MESSAGE_INVALID_BOOK_DISPLAYED_INDEX_IN_REVIEW =
             "The review book index provided is invalid.\n"

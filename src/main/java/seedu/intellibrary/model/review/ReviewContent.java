@@ -3,7 +3,7 @@ package seedu.intellibrary.model.review;
 import static java.util.Objects.requireNonNull;
 
 /**
- * Represents the review content of a review of a book in the address book.
+ * Represents the review content of a review of a book in the application.
  * Guarantees: immutable; is valid as declared in {@link #isValidContent(String)}
  */
 public class ReviewContent {
@@ -13,7 +13,7 @@ public class ReviewContent {
     /*
      * The review should not be empty
      */
-    public static final String VALIDATION_REGEX = "^\\s*(\\S.{1,300})\\s*$";
+    public static final String VALIDATION_REGEX = "^\\s*(\\S.{0,299})\\s*$";
 
     public final String content;
 

@@ -18,7 +18,7 @@ import seedu.intellibrary.model.problem.ProblemList;
 public class Library implements ReadOnlyLibrary {
 
     private final UniqueBookList books;
-    private ProblemList problems;
+    private final ProblemList problems;
 
     /*
      * The 'unusual' code block below is a non-static initialization block,

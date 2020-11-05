@@ -4,7 +4,9 @@ import static java.util.Objects.requireNonNull;
 
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.logging.Logger;
 
+<<<<<<< HEAD:src/main/java/seedu/intellibrary/logic/commands/StockCommand.java
 import seedu.intellibrary.commons.core.Messages;
 import seedu.intellibrary.logic.commands.exceptions.CommandException;
 import seedu.intellibrary.logic.parser.CliSyntax;
@@ -13,6 +15,17 @@ import seedu.intellibrary.model.book.Book;
 import seedu.intellibrary.model.book.NameMatchesKeywordPredicate;
 import seedu.intellibrary.model.book.NumberContainsKeywordPredicate;
 import seedu.intellibrary.ui.Mode;
+=======
+import seedu.address.commons.core.LogsCenter;
+import seedu.address.commons.core.Messages;
+import seedu.address.logic.commands.exceptions.CommandException;
+import seedu.address.logic.parser.CliSyntax;
+import seedu.address.model.Model;
+import seedu.address.model.book.Book;
+import seedu.address.model.book.NameMatchesKeywordPredicate;
+import seedu.address.model.book.NumberContainsKeywordPredicate;
+import seedu.address.ui.Mode;
+>>>>>>> 9c21e3c244132f3455a882c26f163f7013255bf9:src/main/java/seedu/address/logic/commands/StockCommand.java
 
 /**
  * Searches for the stocking of the corresponding book.
@@ -29,6 +42,7 @@ public class StockCommand extends Command {
             + "[" + CliSyntax.PREFIX_ISBN + "ISBN]\n"
             + "Example: " + COMMAND_WORD + " " + CliSyntax.PREFIX_NAME + "a brief history of time";
 
+    private final Logger logger = LogsCenter.getLogger(getClass());
     private Predicate<Book> predicate;
 
     /**
@@ -60,6 +74,7 @@ public class StockCommand extends Command {
 
         model.updateFilteredBookList((book -> false), Mode.NORMAL);
         model.updateFilteredBookList(predicate, Mode.DETAIL);
+        logger.info("Show the stocking information in stocking book card");
         return new CommandResult(String.format(Messages.MESSAGE_BOOKS_LISTED_OVERVIEW,
                 model.getFilteredBookList().size()));
     }

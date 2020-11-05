@@ -6,6 +6,7 @@ import static seedu.intellibrary.commons.core.Messages.MESSAGE_UNKNOWN_COMMAND;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+<<<<<<< HEAD:src/main/java/seedu/intellibrary/logic/parser/LibraryParser.java
 import seedu.intellibrary.logic.commands.AddCommand;
 import seedu.intellibrary.logic.commands.AddProblemCommand;
 import seedu.intellibrary.logic.commands.AddReviewCommand;
@@ -33,6 +34,35 @@ import seedu.intellibrary.logic.commands.UsageByCommand;
 import seedu.intellibrary.logic.commands.UsageCommand;
 import seedu.intellibrary.logic.commands.ViewProblemCommand;
 import seedu.intellibrary.logic.parser.exceptions.ParseException;
+=======
+import seedu.address.logic.commands.AddCommand;
+import seedu.address.logic.commands.AddProblemCommand;
+import seedu.address.logic.commands.AddReviewCommand;
+import seedu.address.logic.commands.ClearCommand;
+import seedu.address.logic.commands.Command;
+import seedu.address.logic.commands.DeleteByCommand;
+import seedu.address.logic.commands.DeleteCommand;
+import seedu.address.logic.commands.DeleteProblemCommand;
+import seedu.address.logic.commands.DeleteReviewCommand;
+import seedu.address.logic.commands.EditCommand;
+import seedu.address.logic.commands.EditReviewCommand;
+import seedu.address.logic.commands.ExitCommand;
+import seedu.address.logic.commands.FindCommand;
+import seedu.address.logic.commands.FindMostPopularCommand;
+import seedu.address.logic.commands.FindProblemCommand;
+import seedu.address.logic.commands.HelpCommand;
+import seedu.address.logic.commands.HistoryCommand;
+import seedu.address.logic.commands.HitCommand;
+import seedu.address.logic.commands.ListCommand;
+import seedu.address.logic.commands.RandomCommand;
+import seedu.address.logic.commands.SearchReviewCommand;
+import seedu.address.logic.commands.StockCommand;
+import seedu.address.logic.commands.TimesCommand;
+import seedu.address.logic.commands.UsageByCommand;
+import seedu.address.logic.commands.UsageCommand;
+import seedu.address.logic.commands.ViewProblemCommand;
+import seedu.address.logic.parser.exceptions.ParseException;
+>>>>>>> 9c21e3c244132f3455a882c26f163f7013255bf9:src/main/java/seedu/address/logic/parser/LibraryParser.java
 
 /**
  * Parses user input.
@@ -85,8 +115,8 @@ public class LibraryParser {
         case FindCommand.COMMAND_WORD:
             return new FindCommandParser().parse(arguments);
 
-        case FindProblemReportCommand.COMMAND_WORD:
-            return new FindProblemReportCommandParser().parse(arguments);
+        case FindProblemCommand.COMMAND_WORD:
+            return new FindProblemCommandParser().parse(arguments);
 
         case HistoryCommand.COMMAND_WORD:
             return new HistoryCommand();
@@ -127,8 +157,8 @@ public class LibraryParser {
         case UsageByCommand.COMMAND_WORD:
             return new UsageByCommandParser().parse(arguments);
 
-        case SortCommand.COMMAND_WORD:
-            return new SortCommandParser().parse(arguments);
+        case FindMostPopularCommand.COMMAND_WORD:
+            return new FindMostPopularCommandParser().parse(arguments);
 
         case AddProblemCommand.COMMAND_WORD:
             return new AddProblemCommandParser().parse(arguments);

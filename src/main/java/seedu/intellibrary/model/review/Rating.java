@@ -3,7 +3,7 @@ package seedu.intellibrary.model.review;
 import static java.util.Objects.requireNonNull;
 
 /**
- * Represents a rating of a review of a book in the address book.
+ * Represents a rating of a review of a book in the application.
  * Guarantees: immutable; is valid as declared in {@link #isValidRating(String)}
  */
 public class Rating {

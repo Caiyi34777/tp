@@ -3,7 +3,7 @@ package seedu.intellibrary.model.review;
 import static java.util.Objects.requireNonNull;
 
 /**
- * Represents the position of the review in the review list of a book in the address book.
+ * Represents the position of the review in the review list of a book in the application.
  * Guarantees: immutable; is valid as declared in {@link #isValidReviewNumber(String)}
  */
 public class ReviewNumber {

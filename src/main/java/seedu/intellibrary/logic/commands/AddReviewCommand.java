@@ -94,6 +94,8 @@ public class AddReviewCommand extends Command {
      * @return The book with the new review list.
      */
     private static Book createdChangedBook(Book book, Review review) {
+        assert book != null;
+        assert review != null;
         Name name = book.getName();
         Isbn isbn = book.getIsbn();
         Email email = book.getEmail();
@@ -107,5 +109,18 @@ public class AddReviewCommand extends Command {
         Stocking stocking = book.getStocking();
 
         return new Book(name, isbn, email, address, times, categories, stocking, reviews, author, publisher);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        } else if (!(o instanceof AddReviewCommand)) {
+            return false;
+        } else {
+            AddReviewCommand other = (AddReviewCommand) o;
+            return index.equals(other.index)
+                   && review.equals(other.review);
+        }
     }
 }

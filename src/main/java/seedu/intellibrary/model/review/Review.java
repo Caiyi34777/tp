@@ -3,7 +3,7 @@ package seedu.intellibrary.model.review;
 import static java.util.Objects.requireNonNull;
 
 /**
- * Represents a Book's review in the address book.
+ * Represents a Book's review in the application.
  */
 public class Review {
 
